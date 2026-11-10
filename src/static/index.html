@@ -8,9 +8,38 @@
   </head>
   <body>
     <header>
+      <div class="account">
+        <button id="account-button" type="button" aria-label="Teacher account" aria-expanded="false">
+          👤
+        </button>
+        <div id="account-menu" class="account-menu hidden">
+          <button id="login-button" type="button">Teacher Login</button>
+          <button id="logout-button" class="hidden" type="button">Log out</button>
+          <p id="account-status" class="hidden"></p>
+        </div>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
+
+    <dialog id="login-dialog">
+      <form id="login-form">
+        <h3>Teacher Login</h3>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" autocomplete="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required />
+        </div>
+        <div id="login-message" class="hidden" role="alert"></div>
+        <div class="dialog-actions">
+          <button type="submit">Log in</button>
+          <button id="cancel-login" class="secondary-button" type="button">Cancel</button>
+        </div>
+      </form>
+    </dialog>
 
     <main>
       <section id="activities-container">
@@ -21,7 +50,7 @@
         </div>
       </section>
 
-      <section id="signup-container">
+      <section id="signup-container" class="hidden">
         <h3>Sign Up for an Activity</h3>
         <form id="signup-form">
           <div class="form-group">
